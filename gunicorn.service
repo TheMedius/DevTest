@@ -6,7 +6,7 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/workspace/DevTest
-ExecStart=/home/ubuntu/workspace/DevTest/enven/bin/gunicorn --access-logfile - --workers 15 --timeout 30 --bind unix:/home/ubuntu/project/app.sock medius.wsgi:application
+ExecStart=/home/ubuntu/workspace/DevTest/enven/bin/gunicorn --access-logfile - --workers 15 --timeout 30 --bind unix:/home/ubuntu/project/app.sock devtest.wsgi:application
 #stderr_logfile = /home/ubuntu/workspace/DevTest/logs/api_stderr.log
 #stdout_logfile = /home/ubuntu/workspace/DevTest/logs/api_stdout.log
 [Install]
