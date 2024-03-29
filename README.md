@@ -1,4 +1,4 @@
-# 🐍 Medius Tech Pvt Ltd Backend Repository
+# 🐍 Medius Tech Pvt Ltd DevTest Repository
 
 Welcome to the Themedius Backend repository! This repository contains the Python Django code for our backend application, powering the endpoints:
 
