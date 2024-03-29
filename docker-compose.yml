@@ -1,0 +1,29 @@
+version: "3"
+services:
+  rabbit:
+    image: rabbitmq:3.8-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_VHOST=vhost
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+  redis:
+    image: redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+  worker1:
+    image: the-medius-celery
+    #command: celery worker -A medius.celeryapp:app -l info -Q worker1 -c 1 -n recommendation_worker@%h -Ofair
+    command: /usr/local/bin/celery -A medius.celery_app worker1 -l info
+  worker2:
+    image: the-medius-celery
+    #command: celery worker -A recommendation.celeryapp:app -l info -Q periodic_worker -c 1 -n periodic_worker@%h -Ofair
+    command: /usr/local/bin/celery -A medius.celery_app worker2 -l info
+  beat:
+    image: the-medius-celery-beat
+    command: celery -A medius.celery_app beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
