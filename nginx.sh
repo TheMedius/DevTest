@@ -4,7 +4,7 @@ sudo cp -rf app.conf /etc/nginx/conf.d
 
 sudo usermod -a -G root www-data
 
-chmod 755 /home/ubuntu/workspace/DevTest
+chmod 755 /var/lib/jenkins/workspace/DevTest
 
 sudo nginx -t
 
