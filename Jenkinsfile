@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'DevTest'
-            }
-    }
+    agent any
     stages {
          stage('Setup Python Virtual Environment'){
             steps {
