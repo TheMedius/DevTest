@@ -33,7 +33,7 @@ The Themedius Backend is a Python Django application that serves as the backbone
 To set up the Themedius Backend locally, follow these steps:
 
 1. Clone this repository to your local machine.
-2. Python Version: 3.8
+2. Python Version: 3.10
 3. Create a virtual environment and install dependencies:
    ```bash
    python -m venv enven
