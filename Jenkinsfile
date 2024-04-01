@@ -28,7 +28,7 @@ pipeline {
         stage('Permissions'){
             steps {
                 sh '''
-                    sudo chmod -R 777 /home/ubuntu/workspace/DevTest
+                    sudo chmod -R 777 /var/lib/jenkins/workspace/DevTest
                     '''
             }
         }
