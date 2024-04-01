@@ -2,7 +2,7 @@
 
 Welcome to the Themedius Backend repository! This repository contains the Python Django code for our backend application, powering the endpoints:
 
-- [api.themedius.ai](https://devtest.themedius.ai)
+- [devtest.themedius.ai](https://devtest.themedius.ai)
 
 
 It's designed to provide a solid foundation for building robust and scalable web applications.
