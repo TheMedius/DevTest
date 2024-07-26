@@ -1,0 +1,40 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="mt-4 mb-4">Manager Evaluation</h2>
+    <hr>
+    <form method="post" action="" class="mt-4">
+    {% csrf_token %}
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form.experience.label_tag }}
+                {{ form.experience }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                {{ form.experience_years.label_tag }}
+                {{ form.experience_years }}
+            </div>
+        </div>
+    </div>
+
+    {% for field in form.visible_fields %}
+    {% if field.name != 'experience' and field.name != 'experience_years' %}
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        <textarea class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" rows="3" maxlength="1000" placeholder="{{ field.label }}"></textarea>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+{% endblock %}

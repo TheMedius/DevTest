@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Manager Evaluation System</h1>
+        <p class="lead">Welcome to the Manager Evaluation System. This platform is designed to help evaluate managers based on a set of predefined questions. Additionally, you can also upload Excel files for processing.</p>
+        <hr class="my-4">
+        <p>Click on the buttons below to get started:</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'evaluate_manager' %}" role="button">Evaluate Manager</a>
+        <a class="btn btn-success btn-lg" href="{% url 'upload_file' %}" role="button">Upload Excel File</a>
+    </div>
+{% endblock %}
