@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        button {
+
+            border-radius: 2px;
+
+        }
+
+        body {
+
+            background-color: #4F9FED;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    h3{
+        color:white;
+    }
+   
+    </style>
+</head>
+
+<body>
+
+    <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {{form.as_p }}
+
+        <button type="submit">Upload File</button>
+
+        <hr>
+        <h3> Please Upload CSV or Excel File</h3>
+
+
+
+    </form>
+</body>
+
+</html>

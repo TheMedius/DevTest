@@ -1,7 +1,8 @@
-"""devtest URL Configuration
+"""
+URL configuration for fileuplodate project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fileuplode_app import views   # Importing views form fileupload_app
 
+#Define url patterns for Django application
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("",views.upload_file,name='upload_file'),   # This will handle file uploads at root url or homepage url
+    path('success/',views.upload_success,name='upload_success'),  # This will be used to display a success message after a file is uploaded
 ]
